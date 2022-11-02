@@ -1,0 +1,67 @@
+<!-- <div class="modal fade" id="exampleModalScrollable" tabindex="-1" role="dialog" aria-labelledby="exampleModalScrollableTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+
+
+            
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="modal-header">
+    <h5 class="modal-title text-center">{{kayitModel.firstName}} {{kayitModel.lastName}} adlı yarışmacının seçimleri</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-content pl-1 pr-1">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-sm-12 col-md-6 pt-3">
+                <ul class=" list-inline text-center">
+                    <li class="list-inline-item">1. {{kayitModel.selection_1_name}}</li>
+                    <hr />
+                    <li class="list-inline">3. {{kayitModel.selection_3_name}}</li>
+                    <hr />
+                    <li class="list-inline">5. {{kayitModel.selection_5_name}}</li>
+                    <hr />
+                    <li class="list-inline">7. {{kayitModel.selection_7_name}}</li>
+                    <hr />
+                    <li class="list-inline">9. {{kayitModel.selection_9_name}}</li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-6 pt-3">
+                <ul class="list-inline text-center">
+                    <li class="list-inline">2. {{kayitModel.selection_2_name}}</li>
+                    <hr />
+                    <li class="list-inline">4. {{kayitModel.selection_4_name}}</li>
+                    <hr />
+                    <li class="list-inline">6. {{kayitModel.selection_6_name}}</li>
+                    <hr />
+                    <li class="list-inline">8. {{kayitModel.selection_8_name}}</li>
+                    <hr />
+                    <li class="list-inline">10. {{kayitModel.selection_10_name}}</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <h5 class="title">Toplam puan: {{kayitModel.total_point}}</h5>
+        </div>
+        <!-- <button *ngIf="!tumKayitlarYuklendi" [disabled]="loading" type="button" class="btn btn-sm btn-secondary" (click)="SonrakiSayfayiYukle()">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            <span *ngIf="!loading" class="fa fa-arrow-down"></span>
+            SONRAKI 50 ATI YÜKLE
+        </button> -->
+
+    </div>
+</div>
+
+<div class="modal-footer">
+
+    <button type="button" class="btn btn-danger btn-link" (click)="activeModal.close('Close click')">Kapat</button>
+
+</div>

@@ -1,0 +1,105 @@
+/* 
+
+td,
+th {
+    vertical-align: top;
+    font-size: 12pt;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    clear: both;
+}
+
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+span.footnodeNumber {
+    padding-right: 1em;
+}
+
+span.annotation_style_by_filter {
+    font-size: 95%;
+    font-family: Arial;
+    background-color: #fff000;
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+span.heading_numbering {
+    margin-right: 0.8rem;
+}
+
+* {
+    margin: 0;
+}
+
+.Heading_20_2 {
+    font-size: 18pt;
+    margin-bottom: 0.212cm;
+    margin-top: 0.353cm;
+    font-family: 'Liberation Serif';
+    writing-mode: horizontal-tb;
+    direction: ltr;
+    font-weight: bold;
+}
+
+.Heading_20_3 {
+    font-size: 14pt;
+    margin-bottom: 0.212cm;
+    margin-top: 0.247cm;
+    font-family: 'Liberation Serif';
+    writing-mode: horizontal-tb;
+    direction: ltr;
+    font-weight: bold;
+}
+
+.P1 {
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 0.212cm;
+    margin-top: 0.423cm;
+    font-family: 'Liberation Serif';
+    writing-mode: horizontal-tb;
+    direction: ltr;
+    text-align: center ! important;
+    color: #5e9ca0;
+}
+
+.Standard {
+    font-size: 12pt;
+    font-family: 'Liberation Serif';
+    writing-mode: horizontal-tb;
+    direction: ltr;
+}
+
+.Text_20_body {
+    font-size: 12pt;
+    font-family: 'Liberation Serif';
+    writing-mode: horizontal-tb;
+    direction: ltr;
+    margin-top: 0cm;
+    margin-bottom: 0.247cm;
+    line-height: 115%;
+}
+
+.Strong_20_Emphasis {
+    font-weight: bold;
+}
+
+/* ODF styles with no properties representable as CSS:
+.T1  { } */ 

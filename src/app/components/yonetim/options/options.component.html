@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="col-sm-12">
+        <div class="form-group">
+            <label for="name" class="strong">Secenek ara</label>
+            <input type="text" class="form-control" id="name" placeholder="Secenek adini yazin.." [(ngModel)]="inputArama" (keyup)="inputAramaKeyUp($event)">
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="container">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Sıra</th>
+                        <th scope="col">Secenek Adı</th>
+                        <th scope="col">Puan</th>
+                        <th scope="col">Secenek Adı Düzenle</th>
+                        <th scope="col">Puan Ekle</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of kayitListe; let sira = index">
+                        <!-- <th scope="row" class="text-right">{{ sira + 1 }}</th> -->
+                        <td>{{sira + 1}}</td>
+                        <td>{{ item.option_name }}</td>
+                        <td>{{ item.option_point }}</td>
+                        <td>
+                            <ng-template #adduzenle let-modal>
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modal-basic-title">{{ item.option_name }} adını düzenle</h4>
+                                    <button type="button" class="close" (click)="modal.dismiss('Cross click')" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form [formGroup]="puanKayit" (ngSubmit)="AdDuzenle(item)">
+                                        <div class="mb-3">
+                                            <label for="inputoption_name">Yeni isim</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" [(ngModel)]="new_name" formControlName="inputoption_name" id="inputoption_name">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn">Ad Degistir</button>
+                                        <button type="button" (click)="modal.dismiss('Cross click')" class="btn">Vazgec</button>
+
+                                    </form>
+                                </div>
+                            </ng-template>
+                            <button class="btn btn-primary btn-sm" (click)="open(adduzenle)"><i class="fa fa-edit" aria-hidden="true"></i></button>
+                            <!-- <button class="btn btn-primary btn-sm" (click)="KayitDuzenle(item.ref_no)"><i class="fa fa-edit" aria-hidden="true"></i></button> -->
+                            <!-- <button class="btn btn-danger btn-sm me-1" (click)="KayitSil(item.ref_no)"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </td>
+                        <td>
+                            <ng-template #content let-modal>
+                                <div class="modal-header">
+                                    <h4 class="modal-title" id="modal-basic-title">{{ item.option_name }} puan ekle</h4>
+                                    <button type="button" class="close" (click)="modal.dismiss('Cross click')" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <form [formGroup]="puanKayit" (ngSubmit)="PuanEkle(item)">
+                                        <div class="mb-3">
+                                            <label for="eklenenpuan">Eklenecek Puan</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" [(ngModel)]="inputPuan" formControlName="eklenenpuan" id="eklenenpuan">
+                                            </div>
+                                        </div>
+                                        <button type="submit" class="btn">Ekle</button>
+                                        <button type="button" (click)="modal.dismiss('Cross click')" class="btn">Vazgec</button>
+
+                                    </form>
+                                </div>
+                            </ng-template>
+                            <button class="btn btn-primary btn-sm" (click)="open(content)"><i class="fa fa-plus" aria-hidden="true"></i></button>
+                            <!-- <button class="btn btn-primary btn-sm" (click)="KayitDuzenle(item.ref_no)"><i class="fa fa-edit" aria-hidden="true"></i></button> -->
+                            <!-- <button class="btn btn-danger btn-sm me-1" (click)="KayitSil(item.ref_no)"><i class="fa fa-trash" aria-hidden="true"></i></button> -->
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container">
+            <button *ngIf="!tumKayitlarYuklendi" [disabled]="loading" type="button" class="btn btn-sm btn-secondary" (click)="SonrakiSayfayiYukle()">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                <span *ngIf="!loading" class="fa fa-arrow-down"></span>
+                SONRAKI 50 ATI YÜKLE
+            </button>
+        </div>
+    </div>

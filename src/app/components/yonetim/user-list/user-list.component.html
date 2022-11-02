@@ -1,0 +1,52 @@
+<div class="section" style="padding-top: 110px;">
+    <div class="container">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Sıra</th>
+                    <th scope="col">Ad</th>
+                    <th scope="col">Soyad</th>
+                    <th scope="col">1. Secenek</th>
+                    <th scope="col">2. Secenek</th>
+                    <th scope="col">3. Secenek</th>
+                    <th scope="col">4. Secenek</th>
+                    <th scope="col">5. Secenek</th>
+                    <th scope="col">6. Secenek</th>
+                    <th scope="col">7. Secenek</th>
+                    <th scope="col">8. Secenek</th>
+                    <th scope="col">9. Secenek</th>
+                    <th scope="col">10. Secenek</th>
+                    <th scope="col">Puan</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of sorted; let sira = index">
+                    <!-- <th scope="row" class="text-right">{{ sira + 1 }}</th> -->
+                    <td>{{sira + 1}}</td>
+                    <td>{{ item.firstName }}</td>
+                    <td>{{ item.lastName }}</td>
+                    <td>{{ item.selection_1_name }}</td>
+                    <td>{{ item.selection_2_name }}</td>
+                    <td>{{ item.selection_3_name }}</td>
+                    <td>{{ item.selection_4_name }}</td>
+                    <td>{{ item.selection_5_name }}</td>
+                    <td>{{ item.selection_6_name }}</td>
+                    <td>{{ item.selection_7_name }}</td>
+                    <td>{{ item.selection_8_name }}</td>
+                    <td>{{ item.selection_9_name }}</td>
+                    <td>{{ item.selection_10_name }}</td>
+                    <td>{{ item.total_point }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- <div class="card-footer">
+                <button *ngIf="!tumKayitlarYuklendi" [disabled]="loading" type="button" class="btn btn-sm btn-secondary" (click)="SonrakiSayfayiYukle()">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    <span *ngIf="!loading" class="fa fa-arrow-down"></span>
+                    Sonraki 50 kaydı yükle
+                </button>
+            </div> -->
+</div>

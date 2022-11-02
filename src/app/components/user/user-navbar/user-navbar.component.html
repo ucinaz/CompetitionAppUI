@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar navbar-transparent" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate">
+            <a [routerLink]="['user/home']"> <img src="../../../assets/logo.png" alt="" class="" width="150"></a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" rel="tooltip" data-placement="bottom" [routerLink]="['user/leaderboard']">
+                        Lider Tablosu
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-success" [routerLink]="['user/my-choices']">Seçimlerim</button>
+                </li>
+                <li class="nav-item">
+                    <button type="button" class="btn btn-danger" [routerLink]="['/login']">Çıkış yap</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

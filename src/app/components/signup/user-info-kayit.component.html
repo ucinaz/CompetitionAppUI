@@ -1,0 +1,106 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/homepage.jpg');">
+        <div class="filter"></div>
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+
+                <div class="card card-register" style="max-width: 800px;">
+                    <h3 class="title text-white">Aramıza Katılın</h3>
+
+                    <form class="register-form" [formGroup]="fgKayit" (ngSubmit)="Kaydet()" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Ad</label>
+                                <div class="input-group form-group-no-border">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon nc-single-02"></i>
+                                        </span>
+                                    </div>
+
+                                    <input pattern="[A-Za-zğüşıöçĞÜŞİÖÇ\s]+" type="text" class="form-control" formControlName="inputfirstName" id="inputfirstName" placeholder="Adınız" autocomplete="off" required (ngModelChange)="isNumeric($event)">
+                                </div>
+                                <small class="text-muted" *ngIf="isnum">
+                                    <span *ngIf="isnum">Ada ve Soyada Sadece Harf Girmelisiniz! </span>
+                                </small>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Soyad</label>
+                                <div class="input-group form-group-no-border">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon nc-single-02"></i>
+                                        </span>
+                                    </div>
+
+                                    <input pattern="[A-Za-zğüşıöçĞÜŞİÖÇ]+" type="text" class="form-control" formControlName="inputlastName" id="inputlastName" placeholder="Soyadınız" autocomplete="off" required>
+                                </div>
+                                <small class="text-muted" *ngIf="isnum">
+                                    <span *ngIf="isnum">Ada ve Soyada Sadece Harf Girmelisiniz! </span>
+                                </small>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <label>E-Posta</label>
+                                <div class="input-group form-group-no-border">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon nc-email-85"></i>
+                                        </span>
+                                    </div>
+                                    <input type="email" class="form-control" formControlName="inputemail" id="inputemail" placeholder="E-Posta Adresiniz" autocomplete="off" ngModel email required>
+                                </div>
+                            </div>
+                            <!-- <div class="col-md-6">
+                                <label>Cep Telefonu</label>
+                                <div class="input-group form-group-no-border">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon nc-key-25"></i>
+                                        </span>
+                                    </div>
+                                    <input type="phone" class="form-control" placeholder="Cep Telefonu" name="cellphone" ngModel required>
+                                </div>
+                            </div> -->
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label>Kullanıcı Adı</label>
+                                <div class="input-group form-group-no-border">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon nc-single-02"></i>
+                                        </span>
+                                    </div>
+                                    <input type="text" class="form-control" formControlName="inputusername" id="inputusername" placeholder="Kullanıcı adı" autocomplete="off" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label>Şifre</label>
+                                <div class="input-group form-group-no-border">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">
+                                            <i class="nc-icon nc-key-25"></i>
+                                        </span>
+                                    </div>
+                                    <input type="password" class="form-control" formControlName="inputpassword" id="inputpassword" placeholder="Şifre" autocomplete="off" required>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit" [disabled]="!fgKayit.valid" class="btn btn-danger btn-block btn-round">
+                            <i *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></i>
+                            Kayıt Ol
+                        </button>
+                    </form>
+                    <div class="row d-flex justify-content-center">
+                        <button type="button" class="btn btn-link px-0" [routerLink]="['/login']">Zaten Bir Hesabım Var</button>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

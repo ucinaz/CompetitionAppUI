@@ -1,0 +1,46 @@
+<div class="modal-header">
+    <h5 class="modal-title text-center">Secenek Sec</h5>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss('Cross click')">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body pl-1 pr-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="form-group">
+                    <label for="EditArama">Search</label>
+                    <input type="text" class="form-control" id="editSelection" placeholder="Search..." [(ngModel)]="editSelection" (ngModelChange)="OptionSearch($event)">
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-sm-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Option Name</th>
+                            <th scope="col">Choose</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="cursor: pointer;" *ngFor="let item of optionSatirList;" (click)="SelectedOption(item)">
+                            <td>{{ item.option_name.toUpperCase() }}</td>
+                            <td>
+                                <button class="btn btn-primary btn-sm" (click)="SelectedOption(item)"><i class="fa fa-plus" aria-hidden="true"></i> Choose</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal-footer">
+
+    <button type="button" class="btn btn-danger btn-link" (click)="activeModal.close('Close click')">Cancel</button>
+
+</div>

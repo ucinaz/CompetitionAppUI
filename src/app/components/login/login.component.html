@@ -1,0 +1,48 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/homepage.jpg');">
+        <div class="filter"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mr-auto ml-auto d-flex justify-content-center">
+                    <div class=" card card-register">
+                        <h3 class="title text-white">Hoşgeldiniz!</h3>
+
+                        <form class="register-form" [formGroup]=" loginForm" (submit)="onSubmit()">
+                            <label>E-Posta</label>
+                            <div class="input-group form-group-no-border">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-email-85"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control" formControlName="username" placeholder="E-Posta Adresiniz" required />
+                            </div>
+
+                            <label>Şifre</label>
+                            <div class="input-group form-group-no-border">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">
+                                        <i class="nc-icon nc-key-25"></i>
+                                    </span>
+                                </div>
+                                <input type="password" class="form-control" formControlName="password" placeholder="Şifreniz" required />
+                            </div>
+                            <button type="submit" class="btn btn-danger btn-block btn-round">
+                                <i *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></i>
+                                Giriş yapın
+                            </button>
+                        </form>
+                        <!-- <div class="row d-flex justify-content-center">
+                            <button type="button" class="btn btn-link px-0" [routerLink]="['/signup']">Kayıt olmak istiyorum</button>
+                        </div> -->
+                        <div *ngIf="error" class="row">
+                            <div class="col-12">
+                                <div class="alert alert-danger mt-3 mb-0">{{error}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>

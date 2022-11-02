@@ -1,0 +1,41 @@
+<div class="wrapper">
+    <div class="page-header page-header-xs" data-parallax="true" style="background-image: url('./assets/img/1.jpg');">
+        <div class="filter text-white h1">Lider Tablosu</div>
+    </div>
+    <div class="section">
+        <div class="container">
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope=" col">Sıra</th>
+                        <th scope="col">Ad</th>
+                        <th scope="col">Soyad</th>
+                        <th scope="col">Puan</th>
+                        <th scope="col">Detay</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of sorted; let sira = index">
+                        <!-- <th scope="row" class="text-right">{{ sira + 1 }}</th> -->
+                        <td>{{sira + 1}}</td>
+                        <td>{{ item.firstName }}</td>
+                        <td>{{ item.lastName }}</td>
+                        <td>{{ item.total_point }}</td>
+                        <td>
+                            <button class="btn btn-primary btn-sm" (click)="Detay(item.id)"><i class="nc-icon nc-zoom-split"></i> Detay</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="card-footer">
+            <button *ngIf="!tumKayitlarYuklendi" [disabled]="loading" type="button" class="btn btn-sm btn-secondary" (click)="SonrakiSayfayiYukle()">
+                <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                <span *ngIf="!loading" class="fa fa-arrow-down"></span>
+                Sonraki 50 kaydı yükle
+            </button>
+        </div>
+    </div>
+</div>

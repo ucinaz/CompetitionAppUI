@@ -1,0 +1,21 @@
+<div class="wrapper">
+    <div class="page-header" style="background-image: url('./assets/img/homepage.jpg');">
+        <div class="filter"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 mr-auto ml-auto">
+                    <div class="card card-register">
+                        <h3 class="title text-white">Complete Registration</h3>
+
+                        <form class="register-form" [formGroup]="fgKayit">
+                            <label>CODE: <strong>{{guid}}</strong></label>
+                            <label>Activate your account by pressing the button below</label>
+                            <button type="submit" class="btn btn-danger btn-block btn-round" (click)="Kaydet()">Complete Registration
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

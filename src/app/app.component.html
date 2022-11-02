@@ -1,0 +1,4 @@
+<app-navbar *ngIf="!this.router.url.includes('user') && !this.router.url.includes('admin')"></app-navbar>
+<app-user-navbar *ngIf="this.router.url.includes('user')"></app-user-navbar>
+<router-outlet></router-outlet>
+<app-footer></app-footer>
